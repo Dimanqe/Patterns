@@ -47,7 +47,7 @@
     <Compile Include="InterestCalculators\IInterestCalculator.cs" />
     <Compile Include="Accounts\SalaryAccount.cs" />
     <Compile Include="Accounts\StandardAccount.cs" />
-    <Compile Include="InterestCalculators\RegularInterestCalculator.cs" />
+    <Compile Include="InterestCalculators\StandardInterestCalculator.cs" />
     <Compile Include="InterestCalculators\SalaryInterestCalculator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

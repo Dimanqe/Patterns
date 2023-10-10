@@ -6,27 +6,24 @@ namespace Patterns
 {
     class Program
     {
-
-        public static class Calculator
+        static void CalculateInterest(Account account, IInterestCalculator interestCalculator)
         {
-            public static void CalculateInterest(Account account, IInterestCalculator interestCalculator)
-            {
-                account.Interest = interestCalculator.CalculateInterest(account);
-            }
+            account.Interest = interestCalculator.CalculateInterest(account);
         }
+
         static void Main()
         {
             Account regularAccount = new StandardAccount(1500);
 
             Account salaryAccount = new SalaryAccount(800);
 
-            IInterestCalculator regularInterestCalculator = new RegularInterestCalculator();
+            IInterestCalculator regularInterestCalculator = new StandardInterestCalculator();
             IInterestCalculator salaryInterestCalculator = new SalaryInterestCalculator();
 
-            Calculator.CalculateInterest(regularAccount, regularInterestCalculator);
+            CalculateInterest(regularAccount, regularInterestCalculator);
             Console.WriteLine($"Interest for {regularAccount.Type} account: {regularAccount.Interest}%");
 
-            Calculator.CalculateInterest(salaryAccount, salaryInterestCalculator);
+            CalculateInterest(salaryAccount, salaryInterestCalculator);
             Console.WriteLine($"Interest for {regularAccount.Type} account: {salaryAccount.Interest}%");
 
             Console.ReadLine();

@@ -2,7 +2,7 @@
 
 namespace Patterns.InterestCalculators
 {
-    public class RegularInterestCalculator : IInterestCalculator
+    public class StandardInterestCalculator : IInterestCalculator
     {
         public double CalculateInterest(Account account)
         {
@@ -10,6 +10,9 @@ namespace Patterns.InterestCalculators
 
             if (account.Balance < 1000)
                 interest -= account.Balance * 0.2;
+
+            if (account.Balance >= 1000)
+                account.Interest -= account.Balance * 0.4;
 
             return interest;
         }
